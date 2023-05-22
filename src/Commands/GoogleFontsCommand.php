@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Apsonex\GoogleFonts\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GoogleFontsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'google-fonts';
 
     public $description = 'My command';
 
