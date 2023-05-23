@@ -19,7 +19,7 @@ it('it can fetch fonts from google server via api', function () {
 
     $res = GoogleFonts::make()->all();
 
-    dD($res);
+    expect($res)->toBeArray();
 
     // https://fonts.googleapis.com/css2?
     // family=Playfair+Display:wght@400;500;600;700;800;900
@@ -44,5 +44,5 @@ it('it can fetch fonts from google server via api', function () {
 
     // $res = GoogleFonts::make()->all();
 
-    // expect($res)->toBeArray();
+
 });
