@@ -17,10 +17,8 @@ class GoogleFonts
 
     public function all()
     {
-        return Arr::get(
-            File::json(__DIR__ . '/../stubs/google-fonts-with-preview.json'),
-            'items'
-        );
+        return File::json(__DIR__ . '/../stubs/google-fonts-with-preview.json');
+
         
         // return Cache::remember('google_fonts', now()->addDay(), function () {
             // return Arr::get(
