@@ -17,20 +17,31 @@ class GoogleFonts
 
     public function all()
     {
-        return Cache::remember('google_fonts', now()->addDay(), function () {
-            if (!config('google-fonts.api_key')) {
-                return Arr::get(
-                    File::json(__DIR__ . '/../stubs/google-fonts.json'),
-                    'items'
-                );
-            }
+        return Arr::get(
+            File::json(__DIR__ . '/../stubs/google-fonts-with-preview.json'),
+            'items'
+        );
+        
+        // return Cache::remember('google_fonts', now()->addDay(), function () {
+            // return Arr::get(
+            //     File::json(__DIR__ . '/../stubs/google-fonts-with-preview.json'),
+            //     'items'
+            // );
 
-            $res = Http::get("https://www.googleapis.com/webfonts/v1/webfonts?key=" . config('google-fonts.api-key'));
 
-            return Arr::get(
-                $res->ok() ? $res->json() : File::json(__DIR__ . '/../stubs/google-fonts.json'),
-                'items'
-            );
-        });
+            // if (!config('google-fonts.api_key')) {
+            //     return Arr::get(
+            //         File::json(__DIR__ . '/../stubs/google-fonts-with-preview.json.json'),
+            //         'items'
+            //     );
+            // }
+
+            // $res = Http::get("https://www.googleapis.com/webfonts/v1/webfonts?key=" . config('google-fonts.api-key'));
+
+            // return Arr::get(
+            //     $res->ok() ? $res->json() : File::json(__DIR__ . '/../stubs/google-fonts.json'),
+            //     'items'
+            // );
+        // });
     }
 }
