@@ -1,4 +1,4 @@
-# This is my package google-fonts
+# apsonex/google-fonts
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/apsonex/google-fonts.svg?style=flat-square)](https://packagist.org/packages/apsonex/google-fonts)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/apsonex/google-fonts/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/apsonex/google-fonts/actions?query=workflow%3Arun-tests+branch%3Amain)
