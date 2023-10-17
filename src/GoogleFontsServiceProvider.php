@@ -17,8 +17,6 @@ class GoogleFontsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('google-fonts')
-            ->hasConfigFile()
-            ->hasMigration('create_google-fonts_table')
-            ->hasCommand(GoogleFontsCommand::class);
+            ->hasConfigFile();
     }
 }
