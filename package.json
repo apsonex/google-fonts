@@ -1,0 +1,13 @@
+{
+  "name": "google-fonts",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "puppeteer": "^22.8.0",
+    "text-to-svg": "^3.1.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
