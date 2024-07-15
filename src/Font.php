@@ -2,8 +2,8 @@
 
 namespace Apsonex\GoogleFonts;
 
-use Apsonex\GoogleFonts\FontParsers\BunnyFontParser;
-use Apsonex\GoogleFonts\FontParsers\GoogleFontParser;
+use Apsonex\GoogleFonts\FontParsers\BunnyFont;
+use Apsonex\GoogleFonts\FontParsers\GoogleFont;
 
 class Font
 {
@@ -43,32 +43,40 @@ class Font
     public function parse(): array
     {
         return match($this->provider) {
-            'google' => GoogleFontParser::make()->parse($this->fontData),
-            default => BunnyFontParser::make()->parse($this->fontData),
+            'google' => GoogleFont::make()->parse($this->fontData),
+            default => BunnyFont::make()->parse($this->fontData),
         };
     }
 
     public function urlString($provider, $fontData)
     {
         return match($this->provider) {
-            'google' => GoogleFontParser::make()->urlString($this->fontData),
-            default => BunnyFontParser::make()->urlString($this->fontData),
+            'google' => GoogleFont::make()->urlString($this->fontData),
+            default => BunnyFont::make()->urlString($this->fontData),
         };
     }
 
     public function preconnectLinks($provider)
     {
         return match($this->provider) {
-            'google' => GoogleFontParser::make()->preconnectLinks($this->fontData),
-            default => BunnyFontParser::make()->preconnectLinks($this->fontData),
+            'google' => GoogleFont::make()->preconnectLinks($this->fontData),
+            default => BunnyFont::make()->preconnectLinks($this->fontData),
         };
     }
 
     public function searchFont($keyword): array
     {
         return match($this->provider) {
-            'google' => GoogleFontParser::make()->searchFont($keyword),
-            default => BunnyFontParser::make()->searchFont($keyword),
+            'google' => GoogleFont::make()->searchFont($keyword),
+            default => BunnyFont::make()->searchFont($keyword),
+        };
+    }
+
+    public function fontsByKey(array $keys = []): array
+    {
+        return match($this->provider) {
+            'google' => GoogleFont::make()->fontsByKey($keyword),
+            default => BunnyFont::make()->fontsByKey($keys),
         };
     }
 }
