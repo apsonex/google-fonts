@@ -2,6 +2,7 @@
 
 namespace Apsonex\GoogleFonts\FontParsers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
 class BunnyFont extends FontParser
@@ -63,6 +64,18 @@ class BunnyFont extends FontParser
     {
         return collect(File::json(__DIR__ . '/../../stubs/bunny-fonts.json'))
             ->filter(fn ($item, $key) => in_array($key, $keys))
+            ->sortBy('family')
+            ->toArray();
+    }
+
+    public function fontsByFamily($families = []): array
+    {
+        // dd($families);
+        $families = array_map(fn($item) => Str::slug($item), $families);
+        // dd($families);
+        // in_array($key, $keys)
+        return collect(File::json(__DIR__ . '/../../stubs/bunny-fonts.json'))
+            ->filter(fn ($item, $key) => in_array(Str::slug($item['family']), $families))
             ->sortBy('family')
             ->toArray();
     }

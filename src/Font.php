@@ -2,6 +2,7 @@
 
 namespace Apsonex\GoogleFonts;
 
+use Illuminate\Support\Arr;
 use Apsonex\GoogleFonts\FontParsers\BunnyFont;
 use Apsonex\GoogleFonts\FontParsers\GoogleFont;
 
@@ -77,6 +78,14 @@ class Font
         return match($this->provider) {
             'google' => GoogleFont::make()->fontsByKey($keyword),
             default => BunnyFont::make()->fontsByKey($keys),
+        };
+    }
+
+    public function fontsByFamily(string|array $familiies): array
+    {
+        return match($this->provider) {
+            'google' => GoogleFont::make()->fontsByFamily($keyword),
+            default => BunnyFont::make()->fontsByFamily(Arr::wrap($familiies)),
         };
     }
 }
