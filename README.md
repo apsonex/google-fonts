@@ -55,3 +55,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+guzzlehttp/guzzle illuminate/contracts illuminate/http spatie/laravel-package-tools
+
+composer require --dev nunomaduro/collision orchestra/testbench pestphp/pest pestphp/pest-plugin-faker pestphp/pest-plugin-laravel pestphp/pest-plugin-livewire pestphp/pest-plugin-mock phpunit/phpunit
