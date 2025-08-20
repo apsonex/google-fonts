@@ -1,11 +1,4 @@
-{
-    "abeezee": {
-        "key": "abeezee",
-        "provider": "bunny",
-        "category": "sans-serif",
-        "family": "ABeeZee",
-        "urlString": "abeezee:400,400i"
-    },
+
     "abel": {
         "key": "abel",
         "provider": "bunny",
